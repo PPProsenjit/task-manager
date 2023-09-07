@@ -2,7 +2,6 @@ import React from 'react';
 import './SignUp.css'
 import { addToDb } from '../../utilities/Database';
 const SignUp = () => {
-
     const handleRegister = (event) =>{
         event.preventDefault();
         const name = event.target.name.value;
@@ -27,11 +26,11 @@ const SignUp = () => {
                     <textarea name='details' rows={4} cols={40} placeholder='describe' required></textarea>
                     
                     <input className="border-l-slate-400 bg-white rounded-sm" name='file' id="file" type="file" required/>
-
                     <br />
                     <input className='bg-blue-500 w-48' type="submit" value='register' />
                 </form>
             </div>
+          
         </div>
     );
 };
