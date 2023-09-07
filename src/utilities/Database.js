@@ -1,5 +1,5 @@
 
-const addToDb = (name, email, password, details) => {
+const addToDb = (name, email, password, details, file) => {
     let usersInfo = new Array();
 
     // get the users Info from local storage
@@ -12,7 +12,8 @@ const addToDb = (name, email, password, details) => {
             "name" : name,
             "email" : email,
             "password" : password,
-            "details" : details
+            "details" : details,
+            "file" : file
         })
     }
     localStorage.setItem('users-info', JSON.stringify(usersInfo))

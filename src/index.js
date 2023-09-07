@@ -7,6 +7,7 @@ import Login from './Component/Login/Login';
 import App from './App';
 import Home from './Component/Home/Home';
 import SignUp from './Component/SignUp/SignUp';
+import Tasks from './Component/Tasks/Tasks';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: 'registration',
         element: <SignUp></SignUp>
+      },
+      {
+        path: 'tasks',
+        element: <Tasks></Tasks>
       }
     ],
   },
