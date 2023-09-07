@@ -4,7 +4,7 @@ const addToDb = (name, email, password, details, file) => {
 
     // get the users Info from local storage
     usersInfo = JSON.parse(localStorage.getItem('users-info')) ? JSON.parse(localStorage.getItem('users-info')) : [];
-    if (usersInfo.some(value => { return value.email == email })) {
+    if (usersInfo.some(value => { return value.email === email })) {
         alert("Already Registered!")
     }
     else {
@@ -21,12 +21,13 @@ const addToDb = (name, email, password, details, file) => {
 
 }
 
-const loginFromDb = (email, password) => {
+const loginFromDb = (email, password, navigate) => {
     let userRecord = new Array();
     userRecord = JSON.parse(localStorage.getItem('users-info')) ? JSON.parse(localStorage.getItem('users-info')) : [];
+    if (userRecord.some((value) => { console.log(value.email, email); return value.email === email && value.password === password })) {
 
-    if (userRecord.some((value) => { return value.email == email && value.password === password })) {
         alert('login Successful')
+        navigate('/userTask')
     }
     else {
         alert('invalid email or password')

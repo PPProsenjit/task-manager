@@ -1,6 +1,7 @@
 import React from 'react';
 import './SignUp.css'
 import { addToDb } from '../../utilities/Database';
+import { Link } from 'react-router-dom';
 const SignUp = () => {
     const handleRegister = (event) =>{
         event.preventDefault();
@@ -23,11 +24,12 @@ const SignUp = () => {
                     <h6>Password</h6>
                     <input className='border-l-slate-400' type="password" name='password' id='password' placeholder='password' required/>
                     <h6>Describe your self!</h6>
-                    <textarea name='details' rows={4} cols={40} placeholder='describe' required></textarea>
+                    <textarea name='details' rows={2} cols={40} placeholder='describe' required></textarea>
                     
                     <input className="border-l-slate-400 bg-white rounded-sm" name='file' id="file" type="file" required/>
                     <br />
-                    <input className='bg-blue-500 w-48' type="submit" value='register' />
+                    <input className='bg-blue-500 w-48 mt-4' type="submit" value='register' />
+                    <h2>Already have an account <Link className='underline' to="/login"> Sign in</Link></h2>
                 </form>
             </div>
           

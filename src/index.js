@@ -8,6 +8,8 @@ import App from './App';
 import Home from './Component/Home/Home';
 import SignUp from './Component/SignUp/SignUp';
 import Tasks from './Component/Tasks/Tasks';
+import ErrorPage from './Component/ErrorPage/ErrorPage';
+import UserTask from './Component/UserTask/UserTask';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -15,6 +17,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App></App>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -31,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: 'tasks',
         element: <Tasks></Tasks>
+      },
+      {
+        path: 'userTask',
+        element: <UserTask></UserTask>
       }
     ],
   },

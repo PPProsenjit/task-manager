@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { storedTasks } from '../../utilities/Database';
+import React from 'react';
 
 const TaskCart = ({taskData}) => {
     return (
