@@ -1,12 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { loginFromDb } from '../../utilities/Database';
 
 const Login = () => {
+
+    const handelLogin = (event) =>{
+        event.preventDefault();
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        loginFromDb(email,password);
+    }
     return (
         <div className='signup flex items-center justify-center bg-slate-400 '>
             <div>
                 <h2 className='text-4xl'>Login</h2>
-                <form className='signup-container p-10 '>
+                <form onSubmit={handelLogin} className='signup-container p-10 '>
                     <h6>Email</h6>
                     <input className='border-l-slate-400' type="email" name="email" id="email" placeholder='demo@gmail.com' />
                     <h6>Password</h6>

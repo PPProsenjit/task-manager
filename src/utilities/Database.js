@@ -19,7 +19,21 @@ const addToDb = (name, email, password, details) => {
 
 }
 
+const loginFromDb = (email, password) =>{
+    let userRecord = new Array();
+   userRecord = JSON.parse(localStorage.getItem('users-info')) ? JSON.parse(localStorage.getItem('users-info')) : [];
+
+    if(userRecord.some((value) => { return value.email == email && value.password === password})){
+        alert('login Successful')
+    }
+    else
+    {
+        alert('Please check Email and password')
+    }
+}
+
 
 export {
     addToDb,
+    loginFromDb
 }
