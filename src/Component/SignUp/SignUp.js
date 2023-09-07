@@ -18,15 +18,15 @@ const SignUp = () => {
                 <h2 className='text-4xl'>Register</h2>
                 <form onSubmit={handleRegister } className='signup-container p-10'>
                     <h6>Full Name</h6>
-                    <input className='border-l-slate-400' type="text" name='name' id="name" placeholder='input your name' />
+                    <input className='border-l-slate-400' type="text" name='name' id="name" placeholder='input your name' required/>
                     <h6>Email</h6>
-                    <input className='border-l-slate-400' type="email" name="email" id="email" placeholder='demo@gmail.com' />
+                    <input className='border-l-slate-400' type="email" name="email" id="email" placeholder='demo@gmail.com' required/>
                     <h6>Password</h6>
-                    <input className='border-l-slate-400' type="password" name='password' id='password' placeholder='password' />
+                    <input className='border-l-slate-400' type="password" name='password' id='password' placeholder='password' required/>
                     <h6>Describe your self!</h6>
-                    <textarea name='details' rows={4} cols={40} placeholder='describe'></textarea>
+                    <textarea name='details' rows={4} cols={40} placeholder='describe' required></textarea>
                     
-                    <input className="border-l-slate-400 bg-white rounded-sm" name='file' id="file" type="file"/>
+                    <input className="border-l-slate-400 bg-white rounded-sm" name='file' id="file" type="file" required/>
 
                     <br />
                     <input className='bg-blue-500 w-48' type="submit" value='register' />

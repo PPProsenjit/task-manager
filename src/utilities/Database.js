@@ -33,8 +33,29 @@ const loginFromDb = (email, password) =>{
     }
 }
 
+const addToTasks = (email, title, description, start_date, end_date) => {
+    let tasksInfo = new Array();
+
+    // get the users Info from local storage
+    tasksInfo = JSON.parse(localStorage.getItem('tasks-Details')) ? JSON.parse(localStorage.getItem('tasks-Details')) : [];
+    if (tasksInfo.some(value => {return value.title == title})) {
+       alert("Already Registered!")
+    }
+    else {
+        tasksInfo.push({
+            "email" : email,
+            "title" : title,
+            "description" : description,
+            "start_date" : start_date,
+            "end_date" : end_date
+        })
+    }
+    localStorage.setItem('tasks-Details', JSON.stringify(tasksInfo))
+
+}
 
 export {
     addToDb,
-    loginFromDb
+    loginFromDb,
+    addToTasks
 }
