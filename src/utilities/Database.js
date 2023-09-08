@@ -23,15 +23,22 @@ const addToDb = (name, email, password, details, file) => {
 
 const loginFromDb = (email, password, navigate) => {
     let userRecord = new Array();
+    let user = {};
+    let trueData 
     userRecord = JSON.parse(localStorage.getItem('users-info')) ? JSON.parse(localStorage.getItem('users-info')) : [];
-    if (userRecord.some((value) => { console.log(value.email, email); return value.email === email && value.password === password })) {
-
+    user = JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user')) : [];
+    if (userRecord.some((value) => { return value.email === email && value.password === password })) {
+        user.push({
+            "email": email
+        })
         alert('login Successful')
         navigate('/userTask')
+    //    return trueData = true
     }
     else {
         alert('invalid email or password')
     }
+    localStorage.setItem('user', JSON.stringify(user))
 }
 
 const addToTasks = (email, title, description, start_date, end_date) => {
@@ -55,10 +62,27 @@ const addToTasks = (email, title, description, start_date, end_date) => {
 
 }
 
+const getUserLoginEmail = () => {
+    const userJSON = localStorage.getItem('user');
+    if (userJSON) {
+        const users = JSON.parse(userJSON);
+        if (Array.isArray(users) && users.length > 0) {
+            const user = users[0]; // Assuming you want the first user in the array
+            if (user.email) {
+                // const email = user.email;
+                // // Now you can use the 'email' variable to access the email address.
+                // return email;
+                return user.email;
+            }
+        }
+        
+    }
+}
 
 
 export {
     addToDb,
     loginFromDb,
     addToTasks,
+    getUserLoginEmail
 }

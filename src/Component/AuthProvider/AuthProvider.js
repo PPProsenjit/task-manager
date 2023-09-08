@@ -6,11 +6,8 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [signIn, setSignIn] = useState(true);
 
-  const user = localStorage.getItem("users-Info") && JSON.parse(localStorage.getItem("users-info"));
+  const user = localStorage.getItem("user") && JSON.parse(localStorage.getItem("user"));
 
-  const logout = () => {
-    localStorage.removeItem("user");
-  };
 
   useEffect(() => {
     if (user) {
@@ -22,7 +19,7 @@ const AuthProvider = ({ children }) => {
   }, [user, signIn]);
 
   return (
-    <UserContext.Provider value={{ user, logout, signIn, setSignIn, loading }}>
+    <UserContext.Provider value={{  signIn, setSignIn, loading }}>
       {children}
     </UserContext.Provider>
   );

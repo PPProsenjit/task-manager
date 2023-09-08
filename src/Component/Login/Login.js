@@ -9,6 +9,7 @@ const Login = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         loginFromDb(email,password ,navigate);
+        console.log(loginFromDb(email,password ,navigate));
     }
     return (
         <div className='signup flex items-center justify-center bg-slate-400 '>
