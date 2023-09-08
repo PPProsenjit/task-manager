@@ -1,9 +1,7 @@
 import React from "react";
 import {
   FaFacebook,
-  FaInstagram,
-  FaCcVisa,
-  FaCcMastercard,
+  FaInstagram,  
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 

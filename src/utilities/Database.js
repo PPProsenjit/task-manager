@@ -1,5 +1,5 @@
 
-const addToDb = (name, email, password, details, file) => {
+const addToDb = (name, email, password, details) => {
     let usersInfo = new Array();
 
     // get the users Info from local storage
@@ -13,7 +13,6 @@ const addToDb = (name, email, password, details, file) => {
             "email": email,
             "password": password,
             "details": details,
-            "file": file
         })
         alert('submit Compleat!')
     }

@@ -9,8 +9,7 @@ const SignUp = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         const details = event.target.details.value;
-        const file = event.target.file.value;
-        addToDb(name,email,password,details, file);
+        addToDb(name,email,password,details);
     }
     return (
         <div  className='signup flex items-center justify-center bg-slate-400 '>
@@ -25,8 +24,6 @@ const SignUp = () => {
                     <input className='border-l-slate-400' type="password" name='password' id='password' placeholder='password' required/>
                     <h6>Describe your self!</h6>
                     <textarea name='details' rows={2} cols={40} placeholder='describe' required></textarea>
-                    
-                    <input className="border-l-slate-400 bg-white rounded-sm" name='file' id="file" type="file" required/>
                     <br />
                     <input className='bg-blue-500 w-48 mt-4' type="submit" value='register' />
                     <h2>Already have an account <Link className='underline' to="/login"> Sign in</Link></h2>

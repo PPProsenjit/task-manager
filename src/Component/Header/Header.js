@@ -1,12 +1,44 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
 import { getUserLoginEmail } from '../../utilities/Database';
+import UserDetails from '../UserDetails/UserDetails';
+import {
+    Button,
+    Dialog,
+    DialogHeader,
+    DialogBody,
+    DialogFooter,
+  } from "@material-tailwind/react";
+import DialogPage from '../Dialog/DialogPage';
 const Header = () => {
     //state to manage user data and authentication
+
+    const [singleUser, setSingleUser] = useState([])
+    const [open, setOpen] = React.useState(false);
     const navigate = useNavigate();
 
+    //get login user email
     const email = getUserLoginEmail();
+    const getUserInfo = JSON.parse(localStorage.getItem('users-info'))
+    // console.log(getUserInfo);
+    useEffect(() => {
+        if (getUserInfo?.length > 0) {
+            const user = getUserInfo.find(loginUser => loginUser.email === email)
+
+            setSingleUser(user);
+        }
+
+    }, [])
+
+    const handleClickOpen = () => {
+        setOpen(true);
+      };
+    
+      const handleClose = () => {
+        setOpen(false);
+      };
+
     const handleLogout = () => {
         localStorage.removeItem("user");
         //logout();
@@ -20,14 +52,18 @@ const Header = () => {
                 {
                     email ?
                         <>
+                            <h3>welcome! {singleUser.name}</h3>
                             {
-                                (email === "admin@gmail.com") ? <Link to='/tasks'>Employee Tasks</Link>:<Link to ="/userTasks">My tasks </Link>
+                                (email === "admin@gmail.com") ?
+                                    <Link to='/tasks'>Employee Tasks</Link>
+                                    :
+                                    <Link to="/userTask">My tasks </Link>
                             }
-                            <Link onClick={handleLogout}>Logout</Link>
+
+                            <Link className='pr-4' onClick={handleLogout}>Logout</Link>
                             <div className="flex items-center md:order-2">
-                                <button type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-                                    <span className="sr-only">Welcome</span>
-                                    <img className="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="user photo" />
+                                <button onClick={() => handleClickOpen()} type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"  >
+                                    <img className={`w-8 h-8 rounded-full `} src="/docs/images/people/profile-picture-3.jpg" alt="user photo" />
                                 </button>
                             </div>
                         </> :
@@ -37,11 +73,14 @@ const Header = () => {
                         </>
                 }
 
-
-
-
-
             </div>
+            {
+                open && 
+                <DialogPage
+                open ={open}
+                handleClose = {handleClose}
+                ></DialogPage>
+            }
         </nav>
     );
 };
