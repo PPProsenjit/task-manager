@@ -10,9 +10,9 @@ import SignUp from './Component/SignUp/SignUp';
 import Tasks from './Component/Tasks/Tasks';
 import ErrorPage from './Component/ErrorPage/ErrorPage';
 import UserTask from './Component/UserTask/UserTask';
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -33,12 +33,13 @@ const router = createBrowserRouter([
       },
       {
         path: 'tasks',
-        element: <Tasks></Tasks>
+        element: <PrivateRoute><Tasks></Tasks></PrivateRoute>
       },
       {
         path: 'userTask',
-        element: <UserTask></UserTask>
-      }
+        element: <PrivateRoute><UserTask></UserTask></PrivateRoute>
+      },
+      
     ],
   },
 ])

@@ -1,11 +1,9 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './Header.css'
-import { UserContext } from '../AuthProvider/AuthProvider';
+import './Header.css';
 import { getUserLoginEmail } from '../../utilities/Database';
 const Header = () => {
     //state to manage user data and authentication
-    // const {user, logout} = useContext(UserContext);
     const navigate = useNavigate();
 
     const email = getUserLoginEmail();
@@ -22,9 +20,10 @@ const Header = () => {
                 {
                     email ?
                         <>
-                            <Link>My tasks </Link>
+                            {
+                                (email === "admin@gmail.com") ? <Link to='/tasks'>Employee Tasks</Link>:<Link to ="/userTasks">My tasks </Link>
+                            }
                             <Link onClick={handleLogout}>Logout</Link>
-
                             <div className="flex items-center md:order-2">
                                 <button type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
                                     <span className="sr-only">Welcome</span>

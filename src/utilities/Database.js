@@ -24,7 +24,6 @@ const addToDb = (name, email, password, details, file) => {
 const loginFromDb = (email, password, navigate) => {
     let userRecord = new Array();
     let user = {};
-    let trueData 
     userRecord = JSON.parse(localStorage.getItem('users-info')) ? JSON.parse(localStorage.getItem('users-info')) : [];
     user = JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user')) : [];
     if (userRecord.some((value) => { return value.email === email && value.password === password })) {
