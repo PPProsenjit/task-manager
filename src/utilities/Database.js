@@ -30,8 +30,13 @@ const loginFromDb = (email, password, navigate) => {
             "email": email
         })
         alert('login Successful')
-        navigate('/userTask')
-    //    return trueData = true
+        if (email === "admin@gmail.com") {
+            navigate('/tasks');
+        }
+        else {
+            navigate('/userTask')
+        }
+        //    return trueData = true
     }
     else {
         alert('invalid email or password')
@@ -73,7 +78,7 @@ const getUserLoginEmail = () => {
                 return user.email;
             }
         }
-        
+
     }
 }
 

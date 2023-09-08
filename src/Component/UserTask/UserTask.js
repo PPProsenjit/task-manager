@@ -35,9 +35,8 @@ const UserTask = () => {
             {
                 userTasks.length === 0 ?
                     <>
-                        <h1>
                         <h1>No Task Available! Good Luck Wait for New task .........</h1>
-                        </h1>
+                       
                     </> :
                     <>
                         <table className='m-10 p-2'>
