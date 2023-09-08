@@ -2,14 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
 import { getUserLoginEmail } from '../../utilities/Database';
-import UserDetails from '../UserDetails/UserDetails';
-import {
-    Button,
-    Dialog,
-    DialogHeader,
-    DialogBody,
-    DialogFooter,
-  } from "@material-tailwind/react";
 import DialogPage from '../Dialog/DialogPage';
 const Header = () => {
     //state to manage user data and authentication

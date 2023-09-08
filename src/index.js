@@ -11,7 +11,6 @@ import Tasks from './Component/Tasks/Tasks';
 import ErrorPage from './Component/ErrorPage/ErrorPage';
 import UserTask from './Component/UserTask/UserTask';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
-import UserDetails from './Component/UserDetails/UserDetails';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter([
@@ -40,11 +39,6 @@ const router = createBrowserRouter([
         path: 'userTask',
         element: <PrivateRoute><UserTask></UserTask></PrivateRoute>
       },
-      {
-        path: 'userDetails',
-        element: <PrivateRoute><UserDetails></UserDetails></PrivateRoute>
-      }
-      
     ],
   },
 ])
