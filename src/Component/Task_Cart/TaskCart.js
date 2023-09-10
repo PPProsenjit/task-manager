@@ -5,6 +5,7 @@ const TaskCart = ({taskData}) => {
         <table className='m-10 p-2'>
             <thead>
                 <tr >
+                    <th>Team</th>
                     <th>Email</th>
                     <th>Task Title</th>
                     <th>Description</th>
@@ -18,6 +19,7 @@ const TaskCart = ({taskData}) => {
                         key={idx}
                         
                     >
+                        <td>{item.team}</td>
                         <td>{item.email}</td>
                         <td>{item.title}</td>
                         <td>{item.description}</td>

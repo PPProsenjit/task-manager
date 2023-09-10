@@ -48,9 +48,14 @@ const Header = () => {
                             {
                                 (email === "admin@gmail.com") ?
                                    <> <Link to='/tasks'>Employee Tasks</Link>
-                                   <Link to='/dashboard'>Dashboard</Link></>
+                                   <Link to='/dashboard'>Dashboard</Link>
+                                   </>
                                     :
+                                    <>
+                                    <Link to="/teamTask">Team Task</Link>
                                     <Link to="/userTask">My tasks </Link>
+                                    
+                                    </>
                             }
 
                             <Link className='pr-4' onClick={handleLogout}>Logout</Link>

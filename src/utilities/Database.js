@@ -1,5 +1,5 @@
 
-const addToDb = (name,role, email, password, details ,navigate) => {
+const addToDb = (team, name, email, password, details ,navigate) => {
     let usersInfo = new Array();
 
     // get the users Info from local storage
@@ -9,8 +9,8 @@ const addToDb = (name,role, email, password, details ,navigate) => {
     }
     else {
         usersInfo.push({
+            "team": team,
             "name": name,
-            "role": role,
             "email": email,
             "password": password,
             "details": details,
@@ -46,7 +46,7 @@ const loginFromDb = (email, password, navigate) => {
     localStorage.setItem('user', JSON.stringify(user))
 }
 
-const addToTasks = (email, title, description, start_date, end_date) => {
+const addToTasks = (team,email, title, description, start_date, end_date) => {
     let tasksInfo = new Array();
 
     // get the users Info from local storage
@@ -56,6 +56,7 @@ const addToTasks = (email, title, description, start_date, end_date) => {
     }
     else {
         tasksInfo.push({
+            "team": team,
             "email": email,
             "title": title,
             "description": description,

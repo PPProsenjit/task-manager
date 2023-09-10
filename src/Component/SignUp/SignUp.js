@@ -7,21 +7,28 @@ const SignUp = () => {
     const handleRegister = (event) =>{
         event.preventDefault();
         const name = event.target.name.value;
-        const role = event.target.role.value;
+        const team = event.target.team.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
         const details = event.target.details.value;
-        addToDb(name,role,email,password,details, navigate);
+        addToDb(team,name,email,password,details, navigate);
     }
     return (
         <div  className='signup flex items-center h-screen justify-center bg-slate-400 '>
             <div>
                 <h2 className='text-4xl'>Register</h2>
                 <form onSubmit={handleRegister } className='signup-container p-10'>
+                     <h6 className='text-3xl'>Team</h6>
+                        <select id="team" name="team" type="team"  className="border-l-slate-400 h-9 w-[310px]" required>
+                            <option>blue</option>
+                            <option>gray</option>
+                            <option>black</option>
+                            <option>White</option>
+                            <option>purple</option>
+                        </select>
+                    
                     <h6 className='text-3xl'>Full Name</h6>
                     <input className='border-l-slate-400 h-9 w-[310px]' type="text" name='name' id="name" placeholder='input your name' required/>
-                    <h6 className='text-3xl'>role</h6>
-                    <input className='border-l-slate-400 h-9 w-[310px]' type="text" name='role' id="role" placeholder='role' required/>
                     <h6 className='text-3xl'>Email</h6>
                     <input className='border-l-slate-400 h-9 w-[310px]' type="email" name="email" id="email" placeholder='demo@gmail.com' required/>
                     <h6 className='text-3xl'>Password</h6>

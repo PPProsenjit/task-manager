@@ -8,6 +8,7 @@ const EmployeeTable = ({ allEmployees }) => {
             <table className='m-10 p-2'>
                 <thead>
                     <tr >
+                        <th>Team</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Description</th>
@@ -20,6 +21,7 @@ const EmployeeTable = ({ allEmployees }) => {
                             key={idx}
 
                         >
+                            <td>{item.team}</td>
                             <td>{item.name}</td>
                             <td>{item.email}</td>
                             <td>{item.description}</td>

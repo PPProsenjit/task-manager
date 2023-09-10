@@ -3,10 +3,11 @@ import React from 'react';
 const TasksTable = ({allTasks}) => {
     return (
         <div>
-            
+
             <table className='m-10 p-2'>
                 <thead>
                     <tr >
+                        <th>Team</th>
                         <th>Email</th>
                         <th>Task Title</th>
                         <th>Description</th>
@@ -20,6 +21,7 @@ const TasksTable = ({allTasks}) => {
                             key={idx}
 
                         >
+                            <td>{item.team}</td>
                             <td>{item.email}</td>
                             <td>{item.title}</td>
                             <td>{item.description}</td>
