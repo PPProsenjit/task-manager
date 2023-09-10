@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/teamTask',
-        element:<TeamTask></TeamTask>
+        element:<PrivateRoute><TeamTask></TeamTask></PrivateRoute>
       },
       {
         path: 'dashboard',

@@ -88,9 +88,11 @@ const Tasks = () => {
             </div>
             <div className='flex' style={{ 'justify-content': 'center' }}>
                 <div>
-                    <h1 className='text-4xl underline mt-5'>Task table</h1>
+                    
                     {taskData ? (
-                        <TaskCart taskData={taskData}></TaskCart>
+                       <> <h1 className='text-4xl underline mt-5'>Task table</h1>
+                       <TaskCart taskData={taskData}></TaskCart>
+                       </>
                     ) : (
                         <div className='flex text-center bg-red-600 text-white'>No task data available..........</div>
                     )}

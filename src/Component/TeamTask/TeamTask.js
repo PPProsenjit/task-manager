@@ -46,15 +46,15 @@ const TeamTask = () => {
     return (
         <div className='flex ' style={{'justify-content': 'center'}}>
 
-            <div>
-                <h1 className='text-4xl underline mt-5'>Team Task </h1>
+            <div> 
                 {
                     teamTasks.length === 0 ?
                         <>
-                            <h1>No Task Available! Good Luck Wait for New task .........</h1>
+                            <h1 className='text-red-500'>No Task Available! Good Luck Wait for New task .........</h1>
 
                         </> :
                         <>
+                        <h1 className='text-4xl underline mt-5'>Team Task </h1>
                             <table className='m-10 p-10'>
                                 <thead className='bg-yellow-300 ml-10'>
                                     <tr className=''>
