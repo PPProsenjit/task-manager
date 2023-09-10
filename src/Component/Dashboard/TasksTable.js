@@ -8,11 +8,11 @@ const TasksTable = ({allTasks}) => {
                 <thead>
                     <tr >
                         <th>Team</th>
-                        <th>Email</th>
-                        <th>Task Title</th>
-                        <th>Description</th>
-                        <th>Start Date</th>
-                        <th>End Date</th>
+                        <th className='pl-10 '>Email</th>
+                        <th className='pl-10 '>Task Title</th>
+                        <th className='pl-10 '>Description</th>
+                        <th className='pl-10 '>Start Date</th>
+                        <th className='pl-10 '>End Date</th>
                     </tr>
                 </thead>
                 <tbody >
@@ -22,17 +22,17 @@ const TasksTable = ({allTasks}) => {
 
                         >
                             <td>{item.team}</td>
-                            <td>{item.email}</td>
-                            <td>{item.title}</td>
-                            <td>{item.description}</td>
-                            <td>{item.start_date}</td>
-                            <td>{item.end_date}</td>
+                            <td className='pl-10 '>{item.email}</td>
+                            <td className='pl-10 '>{item.title}</td>
+                            <td className='pl-10 '>{item.description}</td>
+                            <td className='pl-10 '>{item.start_date}</td>
+                            <td className='pl-10 '>{item.end_date}</td>
 
-                            <td><button className='btn bg-red-500 hover:bg-red-400 text-whiter ml-5 mr-5'>pending</button></td>
+                            <td><button className='btn bg-red-500 hover:bg-red-400 text-whiter ml-5 mr-5 p-2'>pending</button></td>
 
-                            <td><button className='btn bg-yellow-500 hover:bg-yellow-400 text-whiter mr-7'>progress</button></td>
+                            <td><button className='btn bg-yellow-500 hover:bg-yellow-400 text-whiter mr-7 p-2'>progress</button></td>
 
-                            <td><button className='btn bg-green-500 hover:bg-green-400 text-whiter mr-7'>Complied</button></td>
+                            <td><button className='btn bg-green-500 hover:bg-green-400 text-whiter mr-7 p-2'>Complied</button></td>
 
                         </tr>)
                     }

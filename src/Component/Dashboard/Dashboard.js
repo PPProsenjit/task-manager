@@ -47,13 +47,13 @@ const Dashboard = () => {
 
     return (
         <div className='flex'>
-            <div className='w-1/12 h-screen bg-green-300'>
+            <div className='w-1/12 h-screen bg-green-300 pt-5'>
                 <div className='grid'>
                     <button onClick={handleAllEmployee} className='btn bg-orange-300 mb-4 text-3px p-3 rounded-lg'>Employee</button>
                     <button onClick={handleAllTasks} className='btn bg-orange-300 text-3px p-3 rounded-lg'>Assign Tasks</button>
                 </div>
             </div>
-            <div className=''>
+            <div className='pt-5'>
 
                 <div>
                     {allEmployees.length?<h1 className='text-4xl underline'>Employee Table</h1> : <></>}

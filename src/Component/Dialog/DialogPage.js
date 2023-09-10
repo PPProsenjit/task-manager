@@ -33,13 +33,13 @@ const DialogPage = ({ handleClose, open }) => {
                 onClose={handleClose}
                 aria-labelledby="responsive-dialog-title"
             >
-                <DialogTitle id="responsive-dialog-title">
+                <DialogTitle id="responsive-dialog-title" className='text-black'>
                     {"User Details"}
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        {<div>
-                            <h2 className='underline'> Team: {userDetails.team}</h2>
+                        {<div className='text-3xl text-black'>
+                            <h2 className='underline '> Team: {userDetails.team}</h2>
                             <h2> name: {userDetails.name}</h2>
                             <h2>Email: {userDetails.email}</h2>
                             <h2>Details: {userDetails.details}</h2>

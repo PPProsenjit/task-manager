@@ -36,13 +36,13 @@ const Tasks = () => {
 
     return (
         <div className='flex'>
-            <div className='bg-green-500 w-1/4 h-screen'>
-                <h1 className='text-4xl underline'>Add Tasks</h1>
+            <div className='bg-green-400 w-1/4 h-screen text-white '>
+                <h1 className='text-4xl underline pt-5 text-white mb-5'>Add Tasks</h1>
                 <form onSubmit={handleTaskManager} className='pt-10px'>
 
-                    <div className=" w-fll">
-                        <label className=" text-3xl text-gray-700">Team</label>
-                        <select id="team" name="team" type="team" className="m-6 rounded-sm border p-2 pl-10 pr-5 text-center" >
+                    <div className="">
+                        <label className=" text-3xl ">Team</label>
+                        <select id="team" name="team" type="team" className="mt-2 rounded-xl border p-2 pl-10 pr-5 text-2xl w-full text-black" >
                             <option>blue</option>
                             <option>gray</option>
                             <option>black</option>
@@ -52,41 +52,43 @@ const Tasks = () => {
                     </div>
                     <div className='w-fll'>
                         <label className='text-3xl'>Email</label>
-                        <input className='m-4 rounded-sm border p-2' name='email' type="email" placeholder='Employee email ' required />
+                        <input className='mt-2 border p-2 w-full rounded-xl' name='email' type="email" placeholder='Employee email ' required />
                     </div>
                     <div>
                         <label className='text-3xl'>Task Title</label>
-                        <input className='m-4 rounded-sm border p-2' name='title' type="text" placeholder='task title' required />
+                        <input className='border p-2  w-full rounded-xl' name='title' type="text" placeholder='task title' required />
                     </div>
-                    <div className='flex items-center ml-12 w-full mb-2'>
+                    <div >
                         <label className='text-3xl'>Description</label>
-                        <textarea className='rounded-sm border m-4 w-[185px]' name='description' type="text" placeholder='Description' required />
+                        <textarea className=' border rounded-xl w-full' name='description' type="text" placeholder='Description' required />
                     </div>
-                    <div>
-                        <label className='text-3xl'>Start Date</label>
-                        <input name='start_date' className='ml-2 p-2'
-                            value={startDate}
-                            onChange={(e) => setStartDate(e.target.value)}
-                            type="date"
-                            required
-                        />
+                    <div className='flex ' >
+                        <div>
+                            <label className='text-3xl'>Start Date</label>
+                            <input name='start_date' className='ml-2 p-2 text-gray-800'
+                                value={startDate}
+                                onChange={(e) => setStartDate(e.target.value)}
+                                type="date"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label className='text-3xl'> End Date</label>
+                            <input name='end_date ' className='ml-2 p-2 text-gray-800'
+                                value={endDate}
+                                onChange={(e) => setEndDate(e.target.value)}
+                                type="date"
+                                required
+                            />
+                        </div>
                     </div>
-                    <div>
-                        <br />
-                        <label className='text-3xl'> End Date</label>
-                        <input name='end_date' className='ml-5 p-2'
-                            value={endDate}
-                            onChange={(e) => setEndDate(e.target.value)}
-                            type="date"
-                            required
-                        />
-                    </div>
-                    <input className='m-4 rounded-sm border w-40 bg-red-400 p-2 hover:border-l-indigo-300' type="submit" name='submit' />
+                    <input className='m-4 rounded-xl border w-40 bg-red-400 p-2 hover:border-l-indigo-300' type="submit" name='submit' />
                 </form>
 
             </div>
             <div className='flex' style={{ 'justify-content': 'center' }}>
                 <div>
+                    <h1 className='text-4xl underline mt-5'>Task table</h1>
                     {taskData ? (
                         <TaskCart taskData={taskData}></TaskCart>
                     ) : (
