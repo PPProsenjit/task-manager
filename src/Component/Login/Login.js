@@ -11,17 +11,17 @@ const Login = () => {
         loginFromDb(email,password ,navigate);
     }
     return (
-        <div className='signup flex items-center justify-center bg-slate-400 h-full mb-0'>
+        <div className='signup flex h-screen items-center justify-center bg-slate-400 mb-0'>
             <div>
                 <h2 className='text-4xl'>Login</h2>
                 <form onSubmit={handelLogin} className='signup-container p-10 '>
-                    <h6>Email</h6>
-                    <input className='border-l-slate-400' type="email" name="email" id="email" placeholder='demo@gmail.com' required />
-                    <h6>Password</h6>
-                    <input className='border-l-slate-400' type="password" name='password' id='password' placeholder='password' required/>
+                    <h6 className='text-3xl'>Email</h6>
+                    <input className='border-l-slate-400 h-9 w-[310px]' type="email" name="email" id="email" placeholder='demo@gmail.com' required />
+                    <h6 className='text-3xl'>Password</h6>
+                    <input className='border-l-slate-400 h-9 w-[310px]' type="password" name='password' id='password' placeholder='password' required/>
                     <br />
-                    <input className='bg-blue-500 w-40 m-5' type="submit" value='Login' />
-                    <h2>create new account <Link className='underline' to="/registration"> Sign up</Link></h2>
+                    <input className='bg-blue-500 m-5 h-9 w-[310px] rounded-md' type="submit" value='Login' />
+                    <h2 className='text-xl'>create new account <Link className='underline' to="/registration"> Sign up</Link></h2>
                 </form>
                 
                 

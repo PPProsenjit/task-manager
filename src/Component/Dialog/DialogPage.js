@@ -38,9 +38,12 @@ const DialogPage = ({ handleClose, open }) => {
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        <h2>{userDetails.name}</h2>
-                        <h2>{userDetails.email}</h2>
-                        <p>{userDetails.details}</p>
+                        {<div>
+                            <h2> name: {userDetails.name}</h2>
+                            <h2>Email: {userDetails.email}</h2>
+                            <h2>Details: {userDetails.details}</h2>
+                        </div>
+                        }
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>

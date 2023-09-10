@@ -35,25 +35,24 @@ const Tasks = () => {
 
     return (
         <div className='flex'>
-            <div className='bg-green-500 w-1/4'>
+            <div className='bg-green-500 w-1/4 h-screen'>
                 <h1 className='text-2xl'>Add Tasks</h1>
                 <form onSubmit={handleTaskManager}>
                     <div className='w-fll'>
-                        <label>Email</label>
+                        <label className='text-3xl'>Email</label>
                         <input className='m-4 rounded-sm border ' name='email' type="email" placeholder='Employee email ' required />
                     </div>
                     <div>
-                        <label>Task</label>
+                        <label className='text-3xl'>Task Title</label>
                         <input className='m-4 rounded-sm border ' name='title' type="text" placeholder='task title' required />
                     </div>
-                    <div className='flex items-center w-full'>
-                        <label>Description</label>
+                    <div className='flex items-center ml-12 w-full mb-10'>
+                        <label className='text-3xl'>Description</label>
                         <textarea className='rounded-sm border w-[185px]' name='description' type="text" placeholder='Description' required />
                     </div>
-                    <label>Default Section</label>
                     <div>
-                        <label>Start Date</label>
-                        <input name='start_date' className='ml-4'
+                        <label className='text-3xl'>Start Date</label>
+                        <input name='start_date' className='ml-2'
                             value={startDate}
                             onChange={(e) => setStartDate(e.target.value)}
                             type="date"
@@ -62,7 +61,7 @@ const Tasks = () => {
                     </div>
                     <div>
                         <br />
-                        <label > End Date</label>
+                        <label className='text-3xl'> End Date</label>
                         <input name='end_date' className='ml-5'
                             value={endDate}
                             onChange={(e) => setEndDate(e.target.value)}
@@ -78,12 +77,12 @@ const Tasks = () => {
                 {taskData ? (
                     <TaskCart taskData={taskData}></TaskCart>
                 ) : (
-                    <div className='flex text-center bg-red-600'>No task data available.</div>
+                    <div className='flex text-center bg-red-600 text-white'>No task data available..........</div>
                 )}
             </div>
         </div>
 
-    );
+    );  
 };
 
 export default Tasks;

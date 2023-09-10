@@ -1,5 +1,5 @@
 
-const addToDb = (name, email, password, details) => {
+const addToDb = (name,role, email, password, details ,navigate) => {
     let usersInfo = new Array();
 
     // get the users Info from local storage
@@ -10,11 +10,13 @@ const addToDb = (name, email, password, details) => {
     else {
         usersInfo.push({
             "name": name,
+            "role": role,
             "email": email,
             "password": password,
             "details": details,
         })
         alert('submit Compleat!')
+        navigate('/tasks')
     }
     localStorage.setItem('users-info', JSON.stringify(usersInfo))
 

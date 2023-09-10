@@ -47,7 +47,8 @@ const Header = () => {
                             <h3>welcome! {singleUser.name}</h3>
                             {
                                 (email === "admin@gmail.com") ?
-                                    <Link to='/tasks'>Employee Tasks</Link>
+                                   <> <Link to='/tasks'>Employee Tasks</Link>
+                                   <Link to='/dashboard'>Dashboard</Link></>
                                     :
                                     <Link to="/userTask">My tasks </Link>
                             }
