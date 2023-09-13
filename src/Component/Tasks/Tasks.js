@@ -60,7 +60,7 @@ const Tasks = () => {
                     </div>
                     <div >
                         <label className='text-3xl'>Description</label>
-                        <textarea className=' border rounded-xl w-full' name='description' type="text" placeholder='Description' required />
+                        <textarea className=' border rounded-xl w-full text-black' name='description' type="text" placeholder='Description' required />
                     </div>
                     <div className='flex ' >
                         <div>
@@ -74,7 +74,7 @@ const Tasks = () => {
                         </div>
                         <div>
                             <label className='text-3xl'> End Date</label>
-                            <input name='end_date ' className='ml-2 p-2 text-gray-800'
+                            <input name='end_date' className='ml-2 p-2 text-gray-800'
                                 value={endDate}
                                 onChange={(e) => setEndDate(e.target.value)}
                                 type="date"
@@ -86,7 +86,7 @@ const Tasks = () => {
                 </form>
 
             </div>
-            <div className='flex' style={{ 'justify-content': 'center' }}>
+            <div className='flex' style={{ 'justifyContent': 'center' }}>
                 <div>
                     
                     {taskData ? (

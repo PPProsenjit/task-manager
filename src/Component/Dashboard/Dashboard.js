@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import EmployeeTable from './EmployeeTable';
-import TasksTable from './TasksTable';
+import TaskCart from '../Task_Cart/TaskCart';
 
 const Dashboard = () => {
 
     const [allEmployees, setAllEmployees] = useState([])
     const [loading, setLoading] = useState(false);
-    const [taskData, setTaskData] = useState(null);
+    const [taskData, setTaskData] = useState([]);
     const [allTasks, setAllTasks] = useState([])
 
     const employee = JSON.parse(localStorage.getItem('users-info'))
@@ -65,9 +65,9 @@ const Dashboard = () => {
 
                 <div>
                     {allTasks.length ? <h1 className='text-4xl underline'>All Employee Task</h1> : <></>}
-                    {
-                        allTasks.length ? <TasksTable allTasks={allTasks}></TasksTable> : <></>
-                    }
+                   { allTasks.length?
+                    <TaskCart taskData={allTasks}></TaskCart>: <></>}
+                    
                 </div>
             </div>
         </div>

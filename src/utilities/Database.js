@@ -61,7 +61,7 @@ const addToTasks = (team,email, title, description, start_date, end_date) => {
             "title": title,
             "description": description,
             "start_date": start_date,
-            "end_date": end_date
+            "end_date": end_date,
         })
     }
     localStorage.setItem('tasks-Details', JSON.stringify(tasksInfo))
